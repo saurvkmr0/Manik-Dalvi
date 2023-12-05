@@ -1,0 +1,275 @@
+:root {
+    --gray: #e5e5e5;
+    --white: #ffffff;
+    --green: #64BC6E;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin:0 !important;
+    padding:0;
+}
+
+h4{
+    font-size: 16px !important;
+}
+h5{
+    font-size: 14px !important;
+}
+
+
+.container-wrap{
+    /* width:100vw; */
+    background-color: var(--gray);
+}
+
+.navwrap{
+    background-color: white !important;
+}
+.container-fluid{
+    width:100%;
+    background-color: white;
+    padding:0 60px !important;
+    max-width: 1100px;
+}
+
+.mainSection{
+    max-width:1000px;
+    background-color: white;
+    margin:0 auto;
+}
+
+.doctor{
+    width:100%;
+    display:grid;
+    grid-template-columns: auto 1fr;
+    padding:20px 0;
+}
+
+.docProfImg{
+    width:100px;
+    height:100px;
+    margin:10px 40px;
+}
+
+.docProfImg img{
+    width:100px;
+    height:100px;
+}
+
+.docDescp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.docDescp h4{
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.docDescp h5{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.btn-outline-primary{
+    width:120px;
+}
+
+.btn-outline-primary p{
+    font-size: 12px !important;
+    font-weight: 700;
+}
+
+/* Doctor and book appointment section */
+
+.bookingName{
+    padding-left:20px;
+}
+
+.bookingName h4{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bookingName h5{
+    font-size: 18px;
+    font-weight: 400;
+    color: grey;
+}
+
+.fee h5{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--green);
+}
+
+.bookAppointment{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bookingType{
+    display:flex;
+    margin-left: auto;
+    column-gap:0px;
+}
+
+
+.appointmentTypes{
+    border: 2px solid var(--gray);
+    margin-right:20px;
+    border-radius:5px;
+    width:90px;
+    height:90px;
+    display:flex;
+    justify-content: center;
+}
+
+
+
+
+#clinic{
+    background-color: var(--green);
+}
+#svgClinic{
+    fill:white;
+}
+#svgVideoCall{
+    fill: black;
+}
+#svgCall{
+    fill: black;
+}
+
+
+
+
+
+/* choose appointment */
+.scroll-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  .date-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  }
+
+  .date_discp{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+  }
+
+  .clinicName{
+    padding-left: 20px;
+    margin:40px 0;
+  }
+
+  .clinicName h4{
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .clinicName p{
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .clinicAddress{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  .circle-green{
+    width: 20px;
+    height: 20px;
+    background-color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circle-white{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+
+
+
+
+/* appointment data selector */
+  
+  .date-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari/Opera */
+  }
+  
+  .scroll-btn {
+    background-color: #ccc;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 40px;
+  }
+  
+  .scroll-btn:hover {
+    background-color: #999;
+  }
+
+  .date_font{
+    font-weight: 600;
+  }
+
+  .slotStatus{
+    color: var(--green);
+    font-size: 14px;
+  }
+
+
+
+  /* accordian */
+.faq{
+    text-align: center;
+    background-color: #DDF198;
+    padding:50px 0;
+}
+
+.faq-heading h1{
+    font-size: 36px !important;
+    font-weight: 400;
+}
+
+.faq-dropdown{
+    max-width:800px;
+    margin:0 auto;
+    padding:40px;
+}
+
+.accordion-item{
+    margin-bottom:15px;
+}
+  
