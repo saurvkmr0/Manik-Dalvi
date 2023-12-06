@@ -98,4 +98,44 @@ function enableVideoCall(){
     mode="video";
 }
 
+
+// selecting time
+
+let selectedTime = '';
+let storedDivID = '';
+let prevStoredDivID = 'time1';
+  const divs = document.querySelectorAll('.timeBoxCall div');
+
+  // Function to handle click on div
+  function handleClick(event) {
+    const selectedDiv = event.target; // Get the clicked div element
+    const innerHTML = selectedDiv.innerHTML; // Get the innerHTML of the selected div
+    storedDivID = selectedDiv.id;
+    // console.log("Selected Div's innerHTML:", innerHTML);
+    selectedTime = innerHTML;
+    // console.log("Selected Div's ID is:", storedDivID);
+    selectThatTime()
+    
+    // You can store innerHTML in a variable or perform any other action here
+  }
+
+  // Add click event listener to each div
+  divs.forEach(div => {
+    div.addEventListener('click', handleClick);
+  });
+
+  function selectThatTime() {
+    document.getElementById(prevStoredDivID).style.backgroundColor="white";
+    prevStoredDivID = storedDivID;
+    console.log(prevStoredDivID);
+    document.getElementById(storedDivID).style.backgroundColor="#64BC6E";
+}
+
+function loadPaymentPage() {
+  window.location.href = 'https://remedoapp.com/rweb/doctors/drmanikdalvi/992acd41-dc20-4334-b7ce-9da565389754';
+  
+}
+
+
+
   

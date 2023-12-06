@@ -270,6 +270,24 @@ h5{
     font-weight: 400;
   }
 
+  /* continue button */
+
+  .continueButton{
+    padding-right: 20px;
+    margin-bottom: 60px;
+    text-align: end;
+  }
+
+  .continueBtn{
+    border:none;
+    background-color: lightgrey;
+    height: 35px;
+    width: 90px;
+    font-size: 14px;
+    color:white;
+    border-radius: 5px;
+  }
+
 
 
   /* accordian */
