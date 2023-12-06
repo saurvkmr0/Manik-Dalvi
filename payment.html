@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="paymentStyle.css">
 
     <title>Payment Page</title>
 </head>
@@ -14,10 +15,85 @@
         <!-- navbar -->
         <div class="navbar navwrap">
             <div class="container-fluid">
-              <a class="navbar-brand">In-Clinic Consultation</a>
-              <h6><a href="#">Help?</a></h6>
+            <div class="backArrow">
+              <a class="navbar-brand appointmentTypeStatus" >In-Clinic Consultation</a>
+            </div>
+              <h6><a href="#" id="help">Help?</a></h6>
             </div>
         </div>
+
+        <!-- main section -->
+        <div class="mainSection">
+
+            <!-- Doctor Details -->
+            <div class="doctor">
+                <div class="docProfImg">
+                    <img src="assets/doctor_female.svg" alt="#">
+                </div>
+                <div class="docDescp">
+                    <h4>Dr. Manik Dalvi</h4>
+                    <h5>Obstetrics & Gynecology</h5>
+                    <button type="button" class="btn btn-outline-primary"><p>VIEW PROFILE</p></button>
+                </div>
+            </div>
+            <hr>
+
+            <!-- Appointment summary -->
+            <div class="bookAppointment">
+                <div class="bookingName">
+                    <h4 class="summaryTitle">Appointment summary</h4>
+
+                    <div class="summaryGrid">
+
+                        <div class="modeSymbol">
+                            <img src="./assets/Inlinic_01.svg" alt="">
+                        </div>
+
+                        <div class="feeSummary">
+                            <div class="ConsultationType" >In-Clinic Consultation</div>
+                            <div class="fee"><h5>Fees approx ₹ 500</h5></div>
+                            <h5>(pay at clinic)</h5>
+                        </div>
+
+                        <div class="timingSummary">
+                            <div>
+                                <div class="selectedTime">
+                                    <img src="./assets/clock.svg" alt="">Time
+                                </div>
+                                <div class="changeTime">
+                                    <img src="./assets/calender-tick.svg" alt="">Date
+                                </div>
+                                </div>
+                            <div class="changeDateAndTime">
+                                <a href="./index.html" id="help">Change Date & Time</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- opt section  -->
+
+            <div class="regPhone">
+                <h3>Enter phone number to continue</h3>
+                <h5>Please enter your WhatsApp number to receive timely updates.</h5>
+                <div class="otpSection">
+                    <div class="otpForm">
+                        <input type="text" placeholder="Mobile Number*">
+                    </div>
+                    <div class="whatsappSymbol">
+                        <img src="./assets/WhatsApp.png" alt="">
+                    </div>
+                </div>
+
+                <h6>Please enter the mobile number of the patient. You will receive a confirmation message on this number.</h6>
+
+                <div class="sendOTP">
+                    <button>Send OTP</button>
+                </div>
+            </div>
+
 
 
 

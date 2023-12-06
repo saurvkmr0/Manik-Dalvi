@@ -31,22 +31,36 @@ h5{
 
 .navwrap{
     background-color: white !important;
-}
-
-#help{
-  text-decoration: none;
-}
-.container-fluid{
+    height: 60px;
+    box-shadow: 0 3px 6px lightgray;
+  }
+  
+  .navbar-brand{
+    height: 45px;
+    width: 45px;
+    background-color:#FF6767;
+    border-radius: 50%;
+    color : white !important;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #help{
+    text-decoration: none;
+  }
+  .container-fluid{
     width:100%;
     background-color: white;
-    padding:0 60px !important;
-    max-width: 1100px;
-}
-
-.mainSection{
+    /* padding:0 60px !important; */
+    max-width: 1150px;
+  }
+  
+  .mainSection{
     max-width:1000px;
     background-color: white;
     margin:0 auto;
+    border-radius: 5px;
 }
 
 .doctor{

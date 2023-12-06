@@ -1,0 +1,128 @@
+.container-wrap{
+    /* width:100vw; */
+    background-color: var(--white);
+}
+
+.container-fluid{
+    padding:0 20px;
+}
+
+.appointmentTypeStatus{
+    height: 45px;
+    width: auto;
+    border-radius: 50%;
+    color : black !important;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+  .backArrow{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .mainSection{
+    max-width:800px;
+    background-color: white;
+    margin:0 auto;
+    border-radius: 5px;
+}
+
+  /* main section */
+
+  /* doctor details */
+
+  .docProfImg{
+    width: 113px;
+    height:113px;
+    margin:10px 40px;
+    background-color: var(--green);
+    border-radius:50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.docProfImg img{
+    width:120px;
+    height:120px;
+}
+
+/* Appointment summary */
+
+.bookAppointment{
+    display: block;
+    padding-bottom: 40px;
+}
+
+.summaryTitle{
+    padding: 20px 0;
+}
+
+.summaryGrid{
+    width:100%;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+}
+
+.summaryGrid img{
+    padding-right:20px;
+}
+
+.ConsultationType{
+    font-weight: 600;
+}
+
+.timingSummary{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* opt section */
+
+.regPhone{
+    border: 1px  solid lightgray;
+    padding:20px;
+    border-radius:10px;
+    width:100%;
+}
+
+.regPhone h3{
+    font-size: 18px;
+    font-weight: 600;
+    padding-top :10px;
+}
+
+.regPhone h5{
+    font-size: 13px;
+}
+
+.otpSection{
+    display:flex;
+    padding:30px 0;
+}
+
+.otpForm input{
+    border: none;
+    border-bottom: 1px solid grey;
+    width: 250px;
+}
+
+.whatsappSymbol img{
+    width:30px;
+    height:30px;
+}
+
+
+
+.regPhone h6{
+    width: 250px;
+    font-size: 10px;
+    color: gray;
+}
+.sendOTP{
+    padding-right:20px;
+    text-align: right;
+}
