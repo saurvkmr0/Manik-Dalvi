@@ -129,11 +129,13 @@ let prevStoredDivID = 'time1';
     prevStoredDivID = storedDivID;
     console.log(prevStoredDivID);
     document.getElementById(storedDivID).style.backgroundColor="#64BC6E";
+    document.getElementById('continue').style.backgroundColor="#0176C4";
+    document.getElementById('continue').disabled = false;
 }
 
 function loadPaymentPage() {
-  window.location.href = 'https://remedoapp.com/rweb/doctors/drmanikdalvi/992acd41-dc20-4334-b7ce-9da565389754';
-  
+  // window.location.href = 'https://remedoapp.com/rweb/doctors/drmanikdalvi/992acd41-dc20-4334-b7ce-9da565389754';
+  window.location.href = "./payment.html";
 }
 
 

@@ -7,6 +7,8 @@
 * {
     margin: 0;
     padding: 0;
+    cursor: default;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 p {
@@ -29,6 +31,10 @@ h5{
 
 .navwrap{
     background-color: white !important;
+}
+
+#help{
+  text-decoration: none;
 }
 .container-fluid{
     width:100%;
