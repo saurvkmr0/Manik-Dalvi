@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="paymentStyle.css">
@@ -16,9 +19,12 @@
         <div class="navbar navwrap">
             <div class="container-fluid">
             <div class="backArrow">
-              <a class="navbar-brand appointmentTypeStatus" >In-Clinic Consultation</a>
+                <a href="./index.html"><img class="arrowLeft" src="./assets/arrow-left.png" alt=""></a>
+              <a class="navbar-brand appointmentTypeStatus">
+                <span id="changeAppointModeTitle">In-Clinic </span> &#8205; Consultation</span>
+            </a>
             </div>
-              <h6><a href="#" id="help">Help?</a></h6>
+              <h6><a href="#FAQ" id="help">Help?</a></h6>
             </div>
         </div>
 
@@ -50,18 +56,18 @@
                         </div>
 
                         <div class="feeSummary">
-                            <div class="ConsultationType" >In-Clinic Consultation</div>
-                            <div class="fee"><h5>Fees approx ₹ 500</h5></div>
+                            <div class="ConsultationType" ><span id="changeAppointMode">In-Clinic</span> Consultation</div>
+                            <div class="fee"><h5>Fees approx ₹ <span id="changePrice">500</span></h5></div>
                             <h5>(pay at clinic)</h5>
                         </div>
 
                         <div class="timingSummary">
                             <div>
                                 <div class="selectedTime">
-                                    <img src="./assets/clock.svg" alt="">Time
+                                    <img src="./assets/clock.svg" alt=""><span id="selectedTime">Time</span>
                                 </div>
                                 <div class="changeTime">
-                                    <img src="./assets/calender-tick.svg" alt="">Date
+                                    <img src="./assets/calender-tick.svg" alt=""><span id="selectedDate">Date</span>
                                 </div>
                                 </div>
                             <div class="changeDateAndTime">
@@ -78,27 +84,115 @@
                 <h3>Enter phone number to continue</h3>
                 <h5>Please enter your WhatsApp number to receive timely updates.</h5>
                 <div class="otpSection">
-                    <div class="otpForm">
-                        <input type="text" placeholder="Mobile Number*">
+                    <div class="otpForm" onkeypress="checkNumber()">
+                        <input type="text" id="phoneNum" placeholder="Mobile Number*">
                     </div>
                     <div class="whatsappSymbol">
                         <img src="./assets/WhatsApp.png" alt="">
                     </div>
                 </div>
-
+                <div class="numberAlert" id="alert"><h6 id="changeAlert">Mobile number is required.</h6></div>
                 <h6>Please enter the mobile number of the patient. You will receive a confirmation message on this number.</h6>
 
                 <div class="sendOTP">
-                    <button>Send OTP</button>
+                    <button class="continueBtn" id="otpBtn">Send OTP</button>
                 </div>
+            </div>
+        </div>
+            <div class="faq" id="FAQ">
+                <div class="faq-heading">
+                    <h1>Frequently asked questions</h1>
+                </div>
+
+                <!-- FAQ accordian for clinic -->
+                <div class="accordion accordion-flush faq-dropdown hideClinic" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            What are the payment options available?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">E.g, You can pay using a variety of methods such as Internet Banking, Debit/Credit card, Wallet, UPI, and so on.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Do we serve all over India?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">We are currently based in Bhiwandi, however, we offer services nationwide via online consultations.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            What are the walk-in options available?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">We offer services at our clinics located at Bhiwandi</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            Are online consultations available?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">Yes, we offer teleconsultation and onlineservices. Book an appointment at link provided.</div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                            How long will my appointment take?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">The length of your appointment is determined by the condition or injuries being treated, as well as whether or not x-rays or an MRI are required. Please allow at least one hour for doctors to provide personalized attention and high-quality care.</div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                            Is any referral required for appointments?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">No, we do not require a referral for the appointments.</div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                            How can I book an appointment?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">You can click on the book appointment link.</div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                            Do I need to bring anything at my first appointment?
+                          </button>
+                        </h2>
+                        <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                          <div class="accordion-body">You may bring the following documents, if available: ID Proof Prior medication list Any prior diagnosis documentation X-RAY reports</div>
+                        </div>
+                      </div>
+                  </div>
             </div>
 
 
-
-
-    </div>
+    <!-- </div> -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+    <script src="./payment.js"></script>
 </body>
 </html>
