@@ -2,7 +2,7 @@ window.onload = loadThePage
 var mode = localStorage.getItem('mode');
 var pricing = localStorage.getItem('pricing');
 var timing = localStorage.getItem('timing');
-var formattedDate = localStorage.getItem('formatedDate');
+var formattedDate = localStorage.getItem('formattedDate');
 function loadThePage(){
     document.getElementById('changeAppointMode').innerHTML=mode;
     document.getElementById('changeAppointModeTitle').innerHTML=mode;
@@ -22,16 +22,19 @@ console.log(mode);
 function checkNumber()
 {
     document.getElementById('changeAlert').innerHTML="Enter valid phone number";
-    document.getElementById("phoneNum").placeholder.style.color="red";
+    phoneNumber=document.getElementById("phoneNum").value;
     var numberLen=phoneNumber.length;
-    if(numberLen==9)
+    var check=(/^\d+$/.test(phoneNumber));
+    console.log(check);
+    
+    if(numberLen==9 && check)
     {
-        document.getElementById('alert').style.display="none";
+        document.getElementById('alert').style.visibility="hidden";
         document.getElementById('otpBtn').style.backgroundColor="#0176C4";
     }
     else{
         document.getElementById('otpBtn').style.backgroundColor="#D3D3D3";
-        document.getElementById('alert').style.display="block";
+        document.getElementById('alert').style.visibility="visible";
         console.log(phoneNumber);
         console.log(numberLen);
     }

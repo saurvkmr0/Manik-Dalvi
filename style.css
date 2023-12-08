@@ -8,7 +8,6 @@
     margin: 0;
     padding: 0;
     cursor: default;
-    /* font-family: Arial, Helvetica, sans-serif; */
     font-family: Poppins, sans-serif;
 }
 
@@ -26,13 +25,9 @@ h5{
 
 
 .container-wrap{
-    /* width:100vw; */
     background-color: var(--gray);
 }
 
-.arrowLeft{
-  width: 40px;
-}
 
 .navwrap{
     background-color: white !important;
@@ -193,8 +188,8 @@ h5{
     justify-content: space-around;
     white-space: nowrap;
     overflow-x: auto;
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
   }
 
   .date_discp{
@@ -202,6 +197,15 @@ h5{
     flex-direction: column;
     justify-content: center;
     align-items:center;
+  }
+
+  #discpHr_1, #discpHr_2, #discpHr_3{
+    margin:0;
+    padding:0;
+    width:100%;
+    border: none; 
+    border-top: 3px solid var(--green);
+    opacity: 100%;
   }
 
   .clinicName{
@@ -242,12 +246,10 @@ h5{
   
 
 
-
-
 /* appointment data selector */
   
   .date-container::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari/Opera */
+    display: none;
   }
   
   .scroll-btn {
@@ -263,6 +265,12 @@ h5{
   
   .scroll-btn:hover {
     background-color: #999;
+  }
+
+  .scroll-btn{
+    color: black !important;
+    font-size: 30px !important;
+    background-color: white;
   }
 
   .date_font{

@@ -1,14 +1,15 @@
 
 var mode='clinic';
-
+var n=0;
+var dateAdjust = 0;
 
 document.addEventListener("DOMContentLoaded", function() {
+  hrShow_1();
     const dateElement_1 = document.getElementById('date_1');
     const dateElement_2 = document.getElementById('date_2');
     const dateElement_3 = document.getElementById('date_3');
     const leftBtn = document.querySelector('.scroll-btn.left');
     const rightBtn = document.querySelector('.scroll-btn.right');
-    var n=0;
     const today = "Today";
     localStorage.setItem('mode', 'In-Clinic');
     
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         currentDate.setDate(today.getDate() + (n+2));
         datesHTML = `<span>${currentDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>`;
         dateElement_3.innerHTML = datesHTML;
+        
     }
   
     // Initial call to populate dates
@@ -147,6 +149,24 @@ function enableVideoCall(){
     }
 }
 
+//showing Green line for date selection
+
+function hrShow_1(){
+  document.getElementById('discpHr_1').style.visibility="visible";
+  document.getElementById('discpHr_2').style.visibility="hidden";
+  document.getElementById('discpHr_3').style.visibility="hidden";
+}
+function hrShow_2(){
+  document.getElementById('discpHr_1').style.visibility="hidden";
+  document.getElementById('discpHr_2').style.visibility="visible";
+  document.getElementById('discpHr_3').style.visibility="hidden";
+}
+function hrShow_3(){
+  document.getElementById('discpHr_1').style.visibility="hidden";
+  document.getElementById('discpHr_2').style.visibility="hidden";
+  document.getElementById('discpHr_3').style.visibility="visible";
+}
+
 
 // selecting time
 
@@ -157,16 +177,12 @@ let prevStoredDivID = 'time1';
 
   // Function to handle click on div
   function handleClick(event) {
-    const selectedDiv = event.target; // Get the clicked div element
-    const innerHTML = selectedDiv.innerHTML; // Get the innerHTML of the selected div
+    const selectedDiv = event.target; 
+    const innerHTML = selectedDiv.innerHTML; 
     storedDivID = selectedDiv.id;
-    // console.log("Selected Div's innerHTML:", innerHTML);
     selectedTime = innerHTML;
     localStorage.setItem('timing',selectedTime);
-    // console.log("Selected Div's ID is:", storedDivID);
     selectThatTime()
-    
-    // You can store innerHTML in a variable or perform any other action here
   }
 
   // Add click event listener to each div
@@ -185,7 +201,6 @@ let prevStoredDivID = 'time1';
 
 function loadPaymentPage() {
   window.location.href = "./payment.html";
-  // console.log(mode); 
 }
 
 
@@ -193,17 +208,12 @@ function loadPaymentPage() {
 
 
 function formatDate(date) {
-  const day = String(date.getDate()).padStart(2, '0');
+  const day = String(date.getDate()+dateAdjust).padStart(2, '0');
   const month = String(date.getMonth() + 1).padStart(2, '0'); // Adding 1 because months are zero-based
   const year = date.getFullYear();
-
   return `${day}-${month}-${year}`;
 }
 
-// Usage:
-// const today = new Date();
-// const formattedDate = formatDate(today);
-// console.log(formattedDate);
 
 
 

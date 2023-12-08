@@ -1,5 +1,4 @@
 .container-wrap{
-    /* width:100vw; */
     background-color: var(--white);
 }
 
@@ -83,6 +82,10 @@
 .timingSummary{
     display: flex;
     justify-content: space-between;
+}
+
+.changeDateAndTime{
+    font-size: 14px;
 }
 
 /* opt section */
