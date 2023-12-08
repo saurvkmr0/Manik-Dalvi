@@ -1,3 +1,7 @@
+
+var mode='clinic';
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const dateElement_1 = document.getElementById('date_1');
     const dateElement_2 = document.getElementById('date_2');
@@ -6,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const rightBtn = document.querySelector('.scroll-btn.right');
     var n=0;
     const today = "Today";
-    var Mode;
+    localStorage.setItem('mode', 'In-Clinic');
+    
 
     // Function to update the date container with dates
     function updateDates(n) {
@@ -15,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentDate = new Date(today);
         currentDate.setDate(today.getDate() + n);
         datesHTML = `<span>${currentDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</span>`;
+        
+        const formattedDate = formatDate(currentDate);
+        console.log(formattedDate);
+        localStorage.setItem('formattedDate',formattedDate);
+
         if(n===0){
           dateElement_1.innerHTML = "Today";
         }
@@ -52,9 +62,6 @@ document.addEventListener("DOMContentLoaded", function() {
       dateContainer.scrollLeft -= 120; // Change this value to adjust scroll distance
     });
 
-
-    
-
   });
   
 
@@ -71,8 +78,22 @@ function enableClinic(){
     document.getElementById('videoCall').style.backgroundColor="white";
     // document.getElementById('videoCall').style.border="#e5e5e5";
     document.getElementById('svgVideoCall').style.fill="black";
-    mode="clinic";
+    // mode="clinic";
+    localStorage.setItem('mode', 'In-Clinic');
+    localStorage.setItem('pricing', '500');
+    document.getElementById('mainPagePrice').innerHTML="500";
+
+    // for manipulating FAQ section
+    const elementCall = document.getElementsByClassName('hideClinic');
+    for (let i = 0; i < elementCall.length; i++) {
+      elementCall[i].style.display = 'block';
+    }
+    const elementClinic = document.getElementsByClassName('hideCall');
+    for (let i = 0; i < elementClinic.length; i++) {
+      elementClinic[i].style.display = 'none';
+    }
 }
+
 function enableCall(){
     document.getElementById('clinic').style.backgroundColor="white";
     // document.getElementById('clinic').style.border="#e5e5e5";
@@ -83,8 +104,23 @@ function enableCall(){
     document.getElementById('videoCall').style.backgroundColor="white";
     // document.getElementById('videoCall').style.border="#e5e5e5";
     document.getElementById('svgVideoCall').style.fill="black";
-    mode="call";
+    // mode="call";
+    localStorage.setItem('mode', 'Tele');
+    localStorage.setItem('pricing', '525');
+    document.getElementById('mainPagePrice').innerHTML="525";
+
+    // for manipulating FAQ section
+    const elementCall = document.getElementsByClassName('hideClinic');
+    for (let i = 0; i < elementCall.length; i++) {
+      elementCall[i].style.display = 'none';
+    }
+    const elementClinic = document.getElementsByClassName('hideCall');
+    for (let i = 0; i < elementClinic.length; i++) {
+      elementClinic[i].style.display = 'block';
+    }
+
 }
+
 function enableVideoCall(){
     document.getElementById('clinic').style.backgroundColor="white";
     // document.getElementById('clinic').style.border="#e5e5e5";
@@ -95,7 +131,20 @@ function enableVideoCall(){
     document.getElementById('videoCall').style.backgroundColor="#64BC6E";
     // document.getElementById('videoCall').style.border="#64BC6E";
     document.getElementById('svgVideoCall').style.fill="white";
-    mode="video";
+    // mode="video";
+    localStorage.setItem('mode', 'Video');
+    localStorage.setItem('pricing', '525');
+    document.getElementById('mainPagePrice').innerHTML="525";
+
+    // for manipulating FAQ section
+    const elementCall = document.getElementsByClassName('hideClinic');
+    for (let i = 0; i < elementCall.length; i++) {
+      elementCall[i].style.display = 'none';
+    }
+    const elementClinic = document.getElementsByClassName('hideCall');
+    for (let i = 0; i < elementClinic.length; i++) {
+      elementClinic[i].style.display = 'block';
+    }
 }
 
 
@@ -113,6 +162,7 @@ let prevStoredDivID = 'time1';
     storedDivID = selectedDiv.id;
     // console.log("Selected Div's innerHTML:", innerHTML);
     selectedTime = innerHTML;
+    localStorage.setItem('timing',selectedTime);
     // console.log("Selected Div's ID is:", storedDivID);
     selectThatTime()
     
@@ -134,9 +184,29 @@ let prevStoredDivID = 'time1';
 }
 
 function loadPaymentPage() {
-  // window.location.href = 'https://remedoapp.com/rweb/doctors/drmanikdalvi/992acd41-dc20-4334-b7ce-9da565389754';
   window.location.href = "./payment.html";
+  // console.log(mode); 
 }
+
+
+
+
+
+function formatDate(date) {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // Adding 1 because months are zero-based
+  const year = date.getFullYear();
+
+  return `${day}-${month}-${year}`;
+}
+
+// Usage:
+// const today = new Date();
+// const formattedDate = formatDate(today);
+// console.log(formattedDate);
+
+
+
 
 
 
